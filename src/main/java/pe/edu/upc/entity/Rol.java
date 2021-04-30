@@ -3,10 +3,14 @@ package pe.edu.upc.entity;
 import java.io.Serializable;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "Rol")
 public class Rol implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -15,17 +19,17 @@ public class Rol implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idRol;
 
-    @Column(name = "nombreRol", nullable = false, length = 45)
-    private String nombreRol;
+    @Column(name = "rol", nullable = false, length = 45)
+    private String rol;
 
     public Rol() {
         super();
     }
 
-    public Rol(int idRol, String nombreRol) {
+    public Rol(int idRol, String rol) {
         super();
         this.idRol = idRol;
-        this.nombreRol = nombreRol;
+        this.rol = rol;
     }
 
     public int getIdRol() {
@@ -37,11 +41,11 @@ public class Rol implements Serializable {
     }
 
     public String getNombreRol() {
-        return nombreRol;
+        return rol;
     }
 
-    public void setNombreRol(String nombreRol) {
-        this.nombreRol = nombreRol;
+    public void setNombreRol(String rol) {
+        this.rol = rol;
     }
 
 }

@@ -4,195 +4,203 @@ import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "Usuario")
 public class Usuario implements Serializable {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idUsuario;
 
-    private int idCuenta;
-    private int idDatosFacturación;
-    private int idRol;
-    private int idGenero;
-    private int idObjetivoNutricional;
+	private static final long serialVersionUID = 1L;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int idUsuario;
+	private int idRol;
+	private int idGenero;
+	private int idObjetivoNutricional;
 
-    @Column(name = "nombres", nullable = false, length = 25)
-    private String nombres;
-    @Column(name = "apellidos", nullable = false, length = 25)
-    private String apellidos;
-    @Column(name = "telefono", nullable = false, length = 15)
-    private String telefono;
+	@Column(name = "nombres", nullable = false, length = 25)
+	private String nombres;
+	@Column(name = "apellidos", nullable = false, length = 25)
+	private String apellidos;
+	@Column(name = "telefono", nullable = false, length = 15)
+	private String telefono;
 
-    @Column(name = "peso", nullable = false)
-    private int peso;
-    @Column(name = "estatura", nullable = false)
-    private int estatura;
-    @Column(name = "fechaNacimiento", nullable = false)
-    private Date fechaNacimiento;
-    @Column(name = "imc", nullable = false)
-    private int imc;
-    @Column(name = "kcalRecomendado", nullable = false)
-    private int kcalRecomendado;
-    @Column(name = "estadoSuscripción", nullable = false)
-    private int estadoSuscripción;
-    @Column(name = "creditos", nullable = false)
-    private int creditos;
+	@Column(name = "peso", nullable = false)
+	private int peso;
+	@Column(name = "estatura", nullable = false)
+	private int estatura;
+	@Column(name = "fechaNacimiento", nullable = false)
+	private Date fechaNacimiento;
+	@Column(name = "imc", nullable = false)
+	private int imc;
+	@Column(name = "kcalRecomendado", nullable = false)
+	private int kcalRecomendado;
+	@Column(name = "estadoSuscripción", nullable = false)
+	private int estadoSuscripcion;
+	@Column(name = "creditos", nullable = false)
+	private int creditos;
 
-    public Usuario() {
-        super();
-    }
+	@Column(name = "email", nullable = false, length = 25)
+	private String email;
+	@Column(name = "password", nullable = false, length = 25)
+	private String password;
 
-    public Usuario(int idUsuario, int idCuenta, int idDatosFacturación, int idRol, int idGenero,
-            int idObjetivoNutricional, String nombres, String apellidos, String telefono, int peso, int estatura,
-            Date fechaNacimiento, int imc, int kcalRecomendado, int estadoSuscripción, int creditos) {
-        super();
-        this.idUsuario = idUsuario;
-        this.idCuenta = idCuenta;
-        this.idDatosFacturación = idDatosFacturación;
-        this.idRol = idRol;
-        this.idGenero = idGenero;
-        this.idObjetivoNutricional = idObjetivoNutricional;
-        this.nombres = nombres;
-        this.apellidos = apellidos;
-        this.telefono = telefono;
-        this.peso = peso;
-        this.estatura = estatura;
-        this.fechaNacimiento = fechaNacimiento;
-        this.imc = imc;
-        this.kcalRecomendado = kcalRecomendado;
-        this.estadoSuscripción = estadoSuscripción;
-        this.creditos = creditos;
-    }
+	public Usuario() {
+		super();
+	}
 
-    public int getIdUsuario() {
-        return idUsuario;
-    }
+	public Usuario(int idUsuario, int idRol, int idGenero, int idObjetivoNutricional, String nombres, String apellidos,
+			String telefono, int peso, int estatura, Date fechaNacimiento, int imc, int kcalRecomendado,
+			int estadoSuscripcion, int creditos, String email, String password) {
+		super();
+		this.idUsuario = idUsuario;
+		this.idRol = idRol;
+		this.idGenero = idGenero;
+		this.idObjetivoNutricional = idObjetivoNutricional;
+		this.nombres = nombres;
+		this.apellidos = apellidos;
+		this.telefono = telefono;
+		this.peso = peso;
+		this.estatura = estatura;
+		this.fechaNacimiento = fechaNacimiento;
+		this.imc = imc;
+		this.kcalRecomendado = kcalRecomendado;
+		this.estadoSuscripcion = estadoSuscripcion;
+		this.creditos = creditos;
+		this.email = email;
+		this.password = password;
+	}
 
-    public void setIdUsuario(int idUsuario) {
-        this.idUsuario = idUsuario;
-    }
+	public int getIdUsuario() {
+		return idUsuario;
+	}
 
-    public int getIdCuenta() {
-        return idCuenta;
-    }
+	public void setIdUsuario(int idUsuario) {
+		this.idUsuario = idUsuario;
+	}
 
-    public void setIdCuenta(int idCuenta) {
-        this.idCuenta = idCuenta;
-    }
+	public int getIdRol() {
+		return idRol;
+	}
 
-    public int getIdDatosFacturación() {
-        return idDatosFacturación;
-    }
+	public void setIdRol(int idRol) {
+		this.idRol = idRol;
+	}
 
-    public void setIdDatosFacturación(int idDatosFacturación) {
-        this.idDatosFacturación = idDatosFacturación;
-    }
+	public int getIdGenero() {
+		return idGenero;
+	}
 
-    public int getIdRol() {
-        return idRol;
-    }
+	public void setIdGenero(int idGenero) {
+		this.idGenero = idGenero;
+	}
 
-    public void setIdRol(int idRol) {
-        this.idRol = idRol;
-    }
+	public int getIdObjetivoNutricional() {
+		return idObjetivoNutricional;
+	}
 
-    public int getIdGenero() {
-        return idGenero;
-    }
+	public void setIdObjetivoNutricional(int idObjetivoNutricional) {
+		this.idObjetivoNutricional = idObjetivoNutricional;
+	}
 
-    public void setIdGenero(int idGenero) {
-        this.idGenero = idGenero;
-    }
+	public String getNombres() {
+		return nombres;
+	}
 
-    public int getIdObjetivoNutricional() {
-        return idObjetivoNutricional;
-    }
+	public void setNombres(String nombres) {
+		this.nombres = nombres;
+	}
 
-    public void setIdObjetivoNutricional(int idObjetivoNutricional) {
-        this.idObjetivoNutricional = idObjetivoNutricional;
-    }
+	public String getApellidos() {
+		return apellidos;
+	}
 
-    public String getNombres() {
-        return nombres;
-    }
+	public void setApellidos(String apellidos) {
+		this.apellidos = apellidos;
+	}
 
-    public void setNombres(String nombres) {
-        this.nombres = nombres;
-    }
+	public String getTelefono() {
+		return telefono;
+	}
 
-    public String getApellidos() {
-        return apellidos;
-    }
+	public void setTelefono(String telefono) {
+		this.telefono = telefono;
+	}
 
-    public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
-    }
+	public int getPeso() {
+		return peso;
+	}
 
-    public String getTelefono() {
-        return telefono;
-    }
+	public void setPeso(int peso) {
+		this.peso = peso;
+	}
 
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
-    }
+	public int getEstatura() {
+		return estatura;
+	}
 
-    public int getPeso() {
-        return peso;
-    }
+	public void setEstatura(int estatura) {
+		this.estatura = estatura;
+	}
 
-    public void setPeso(int peso) {
-        this.peso = peso;
-    }
+	public Date getFechaNacimiento() {
+		return fechaNacimiento;
+	}
 
-    public int getEstatura() {
-        return estatura;
-    }
+	public void setFechaNacimiento(Date fechaNacimiento) {
+		this.fechaNacimiento = fechaNacimiento;
+	}
 
-    public void setEstatura(int estatura) {
-        this.estatura = estatura;
-    }
+	public int getImc() {
+		return imc;
+	}
 
-    public Date getFechaNacimiento() {
-        return fechaNacimiento;
-    }
+	public void setImc(int imc) {
+		this.imc = imc;
+	}
 
-    public void setFechaNacimiento(Date fechaNacimiento) {
-        this.fechaNacimiento = fechaNacimiento;
-    }
+	public int getKcalRecomendado() {
+		return kcalRecomendado;
+	}
 
-    public int getImc() {
-        return imc;
-    }
+	public void setKcalRecomendado(int kcalRecomendado) {
+		this.kcalRecomendado = kcalRecomendado;
+	}
 
-    public void setImc(int imc) {
-        this.imc = imc;
-    }
+	public int getEstadoSuscripcion() {
+		return estadoSuscripcion;
+	}
 
-    public int getKcalRecomendado() {
-        return kcalRecomendado;
-    }
+	public void setEstadoSuscripcion(int estadoSuscripcion) {
+		this.estadoSuscripcion = estadoSuscripcion;
+	}
 
-    public void setKcalRecomendado(int kcalRecomendado) {
-        this.kcalRecomendado = kcalRecomendado;
-    }
+	public int getCreditos() {
+		return creditos;
+	}
 
-    public int getEstadoSuscripción() {
-        return estadoSuscripción;
-    }
+	public void setCreditos(int creditos) {
+		this.creditos = creditos;
+	}
 
-    public void setEstadoSuscripción(int estadoSuscripción) {
-        this.estadoSuscripción = estadoSuscripción;
-    }
+	public String getEmail() {
+		return email;
+	}
 
-    public int getCreditos() {
-        return creditos;
-    }
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
-    public void setCreditos(int creditos) {
-        this.creditos = creditos;
-    }
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
 
 }
