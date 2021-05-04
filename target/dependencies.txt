@@ -1,0 +1,20 @@
+digraph "pe.edu.upc:Delifood:war:0.0.1-SNAPSHOT" { 
+	"pe.edu.upc:Delifood:war:0.0.1-SNAPSHOT" -> "jakarta.platform:jakarta.jakartaee-api:jar:8.0.0:provided" ; 
+	"pe.edu.upc:Delifood:war:0.0.1-SNAPSHOT" -> "javax.faces:javax.faces-api:jar:2.3:provided" ; 
+	"pe.edu.upc:Delifood:war:0.0.1-SNAPSHOT" -> "org.primefaces:primefaces:jar:8.0:compile" ; 
+	"pe.edu.upc:Delifood:war:0.0.1-SNAPSHOT" -> "org.omnifaces:omnifaces:jar:3.3:compile" ; 
+	"pe.edu.upc:Delifood:war:0.0.1-SNAPSHOT" -> "org.apache.poi:poi-ooxml:jar:3.15:compile" ; 
+	"pe.edu.upc:Delifood:war:0.0.1-SNAPSHOT" -> "com.lowagie:itext:jar:2.1.7:compile" ; 
+	"org.apache.poi:poi-ooxml:jar:3.15:compile" -> "org.apache.poi:poi:jar:3.15:compile" ; 
+	"org.apache.poi:poi-ooxml:jar:3.15:compile" -> "org.apache.poi:poi-ooxml-schemas:jar:3.15:compile" ; 
+	"org.apache.poi:poi-ooxml:jar:3.15:compile" -> "com.github.virtuald:curvesapi:jar:1.04:compile" ; 
+	"org.apache.poi:poi:jar:3.15:compile" -> "commons-codec:commons-codec:jar:1.10:compile" ; 
+	"org.apache.poi:poi:jar:3.15:compile" -> "org.apache.commons:commons-collections4:jar:4.1:compile" ; 
+	"org.apache.poi:poi-ooxml-schemas:jar:3.15:compile" -> "org.apache.xmlbeans:xmlbeans:jar:2.6.0:compile" ; 
+	"org.apache.xmlbeans:xmlbeans:jar:2.6.0:compile" -> "stax:stax-api:jar:1.0.1:compile" ; 
+	"com.lowagie:itext:jar:2.1.7:compile" -> "bouncycastle:bcmail-jdk14:jar:138:compile" ; 
+	"com.lowagie:itext:jar:2.1.7:compile" -> "bouncycastle:bcprov-jdk14:jar:138:compile" ; 
+	"com.lowagie:itext:jar:2.1.7:compile" -> "org.bouncycastle:bctsp-jdk14:jar:1.38:compile" ; 
+	"org.bouncycastle:bctsp-jdk14:jar:1.38:compile" -> "org.bouncycastle:bcprov-jdk14:jar:1.38:compile" ; 
+	"org.bouncycastle:bctsp-jdk14:jar:1.38:compile" -> "org.bouncycastle:bcmail-jdk14:jar:1.38:compile" ; 
+ } 

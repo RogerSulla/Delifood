@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -18,9 +20,18 @@ public class Usuario implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idUsuario;
-	private int idRol;
-	private int idGenero;
-	private int idObjetivoNutricional;
+
+	@ManyToOne
+	@JoinColumn(name = "idRol")
+	private Rol rol;
+
+	@ManyToOne
+	@JoinColumn(name = "idGenero")
+	private Genero genero;
+
+	@ManyToOne
+	@JoinColumn(name = "idObjetivoNutricional")
+	private ObjetivoNutricional objetivoNutricional;
 
 	@Column(name = "nombres", nullable = false, length = 25)
 	private String nombres;
@@ -53,14 +64,14 @@ public class Usuario implements Serializable {
 		super();
 	}
 
-	public Usuario(int idUsuario, int idRol, int idGenero, int idObjetivoNutricional, String nombres, String apellidos,
-			String telefono, int peso, int estatura, Date fechaNacimiento, int imc, int kcalRecomendado,
-			int estadoSuscripcion, int creditos, String email, String password) {
+	public Usuario(int idUsuario, Rol rol, Genero genero, ObjetivoNutricional objetivoNutricional, String nombres,
+			String apellidos, String telefono, int peso, int estatura, Date fechaNacimiento, int imc,
+			int kcalRecomendado, int estadoSuscripcion, int creditos, String email, String password) {
 		super();
 		this.idUsuario = idUsuario;
-		this.idRol = idRol;
-		this.idGenero = idGenero;
-		this.idObjetivoNutricional = idObjetivoNutricional;
+		this.rol = rol;
+		this.genero = genero;
+		this.objetivoNutricional = objetivoNutricional;
 		this.nombres = nombres;
 		this.apellidos = apellidos;
 		this.telefono = telefono;
@@ -83,28 +94,28 @@ public class Usuario implements Serializable {
 		this.idUsuario = idUsuario;
 	}
 
-	public int getIdRol() {
-		return idRol;
+	public Rol getRol() {
+		return rol;
 	}
 
-	public void setIdRol(int idRol) {
-		this.idRol = idRol;
+	public void setRol(Rol rol) {
+		this.rol = rol;
 	}
 
-	public int getIdGenero() {
-		return idGenero;
+	public Genero getGenero() {
+		return genero;
 	}
 
-	public void setIdGenero(int idGenero) {
-		this.idGenero = idGenero;
+	public void setGenero(Genero genero) {
+		this.genero = genero;
 	}
 
-	public int getIdObjetivoNutricional() {
-		return idObjetivoNutricional;
+	public ObjetivoNutricional getObjetivoNutricional() {
+		return objetivoNutricional;
 	}
 
-	public void setIdObjetivoNutricional(int idObjetivoNutricional) {
-		this.idObjetivoNutricional = idObjetivoNutricional;
+	public void setObjetivoNutricional(ObjetivoNutricional objetivoNutricional) {
+		this.objetivoNutricional = objetivoNutricional;
 	}
 
 	public String getNombres() {

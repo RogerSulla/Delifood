@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -15,40 +17,50 @@ public class DetallePedido implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idDetallePedido;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int idDetallePedido;
 
-    private int idPedido;
-    private int idComida;
-    
+	@ManyToOne
+	@JoinColumn(name = "idPedido", nullable = false)
+	private Pedido pedido;
+
+	@ManyToOne
+	@JoinColumn(name = "idComida", nullable = false)
+	private Comida comida;
+
 	public DetallePedido() {
 		super();
 	}
-	
-	public DetallePedido(int idDetallePedido, int idPedido, int idComida) {
+
+	public DetallePedido(int idDetallePedido, Pedido pedido, Comida comida) {
 		super();
 		this.idDetallePedido = idDetallePedido;
-		this.idPedido = idPedido;
-		this.idComida = idComida;
+		this.pedido = pedido;
+		this.comida = comida;
 	}
-	
+
 	public int getIdDetallePedido() {
 		return idDetallePedido;
 	}
+
 	public void setIdDetallePedido(int idDetallePedido) {
 		this.idDetallePedido = idDetallePedido;
 	}
-	public int getIdPedido() {
-		return idPedido;
+
+	public Pedido getPedido() {
+		return pedido;
 	}
-	public void setIdPedido(int idPedido) {
-		this.idPedido = idPedido;
+
+	public void setPedido(Pedido pedido) {
+		this.pedido = pedido;
 	}
-	public int getIdComida() {
-		return idComida;
+
+	public Comida getComida() {
+		return comida;
 	}
-	public void setIdComida(int idComida) {
-		this.idComida = idComida;
+
+	public void setComida(Comida comida) {
+		this.comida = comida;
 	}
-        
+
 }

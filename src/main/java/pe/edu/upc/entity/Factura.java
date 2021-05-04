@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -16,31 +18,36 @@ public class Factura implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public int idFactura;
-    public int idPlan;
-    public int idTarjeta;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	public int idFactura;
 
-    public Date fechaFacturacion;
-    public int tipoComprobante;
+	@ManyToOne
+	@JoinColumn(name = "idPlan", nullable = false)
+	public Plan plan;
 
-    @Column(name = "tipoIdentificacion", nullable = false, length = 10)
-    public String tipoIdentificacion;
-    public int numeroIdentificacion;
-    @Column(name = "nombresFacturacion", nullable = false, length = 25)
-    public String nombresFacturacion;
-    
+	@ManyToOne
+	@JoinColumn(name = "idTarjeta", nullable = false)
+	public Tarjeta tarjeta;
+
+	public Date fechaFacturacion;
+	public int tipoComprobante;
+
+	@Column(name = "tipoIdentificacion", nullable = false, length = 10)
+	public String tipoIdentificacion;
+	public int numeroIdentificacion;
+	@Column(name = "nombresFacturacion", nullable = false, length = 25)
+	public String nombresFacturacion;
+
 	public Factura() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
-	public Factura(int idFactura, int idPlan, int idTarjeta, Date fechaFacturacion, int tipoComprobante,
+	public Factura(int idFactura, Plan plan, Tarjeta tarjeta, Date fechaFacturacion, int tipoComprobante,
 			String tipoIdentificacion, int numeroIdentificacion, String nombresFacturacion) {
 		super();
 		this.idFactura = idFactura;
-		this.idPlan = idPlan;
-		this.idTarjeta = idTarjeta;
+		this.plan = plan;
+		this.tarjeta = tarjeta;
 		this.fechaFacturacion = fechaFacturacion;
 		this.tipoComprobante = tipoComprobante;
 		this.tipoIdentificacion = tipoIdentificacion;
@@ -56,20 +63,20 @@ public class Factura implements Serializable {
 		this.idFactura = idFactura;
 	}
 
-	public int getIdPlan() {
-		return idPlan;
+	public Plan getPlan() {
+		return plan;
 	}
 
-	public void setIdPlan(int idPlan) {
-		this.idPlan = idPlan;
+	public void setPlan(Plan plan) {
+		this.plan = plan;
 	}
 
-	public int getIdTarjeta() {
-		return idTarjeta;
+	public Tarjeta getTarjeta() {
+		return tarjeta;
 	}
 
-	public void setIdTarjeta(int idTarjeta) {
-		this.idTarjeta = idTarjeta;
+	public void setTarjeta(Tarjeta tarjeta) {
+		this.tarjeta = tarjeta;
 	}
 
 	public Date getFechaFacturacion() {
@@ -111,6 +118,5 @@ public class Factura implements Serializable {
 	public void setNombresFacturacion(String nombresFacturacion) {
 		this.nombresFacturacion = nombresFacturacion;
 	}
-    
-    
+
 }
