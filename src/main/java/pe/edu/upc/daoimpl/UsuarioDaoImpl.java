@@ -6,11 +6,10 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 
-import pe.edu.upc.dao.iCuentaDao;
-import pe.edu.upc.entity.Cuenta;
+import pe.edu.upc.dao.IUsuarioDao;
+import pe.edu.upc.entity.Usuario;
 
-public class CuentaDaoImpl implements iCuentaDao, Serializable {
-
+public class UsuarioDaoImpl implements IUsuarioDao, Serializable {
     private static final long serialVersionUID = 1L;
 
     @PersistenceContext(unitName = "a")
@@ -18,8 +17,14 @@ public class CuentaDaoImpl implements iCuentaDao, Serializable {
 
     @Transactional
     @Override
-    public void insertar(Cuenta cuenta) {
-        em.persist(cuenta);
+    public void insertar(Usuario usuario) {
+        try {
+            em.persist(usuario);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            ;
+        }
+
     }
 
 }
