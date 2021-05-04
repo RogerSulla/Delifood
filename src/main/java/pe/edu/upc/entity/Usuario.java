@@ -40,19 +40,19 @@ public class Usuario implements Serializable {
 	@Column(name = "telefono", nullable = false, length = 15)
 	private String telefono;
 
-	@Column(name = "peso", nullable = false)
+	@Column(name = "peso")
 	private int peso;
-	@Column(name = "estatura", nullable = false)
+	@Column(name = "estatura")
 	private int estatura;
-	@Column(name = "fechaNacimiento", nullable = false)
+	@Column(name = "fechaNacimiento")
 	private Date fechaNacimiento;
-	@Column(name = "imc", nullable = false)
+	@Column(name = "imc")
 	private int imc;
-	@Column(name = "kcalRecomendado", nullable = false)
+	@Column(name = "kcalRecomendado")
 	private int kcalRecomendado;
-	@Column(name = "estadoSuscripción", nullable = false)
+	@Column(name = "estadoSuscripcion")
 	private int estadoSuscripcion;
-	@Column(name = "creditos", nullable = false)
+	@Column(name = "creditos")
 	private int creditos;
 
 	@Column(name = "email", nullable = false, length = 25)
@@ -62,28 +62,6 @@ public class Usuario implements Serializable {
 
 	public Usuario() {
 		super();
-	}
-
-	public Usuario(int idUsuario, Rol rol, Genero genero, ObjetivoNutricional objetivoNutricional, String nombres,
-			String apellidos, String telefono, int peso, int estatura, Date fechaNacimiento, int imc,
-			int kcalRecomendado, int estadoSuscripcion, int creditos, String email, String password) {
-		super();
-		this.idUsuario = idUsuario;
-		this.rol = rol;
-		this.genero = genero;
-		this.objetivoNutricional = objetivoNutricional;
-		this.nombres = nombres;
-		this.apellidos = apellidos;
-		this.telefono = telefono;
-		this.peso = peso;
-		this.estatura = estatura;
-		this.fechaNacimiento = fechaNacimiento;
-		this.imc = imc;
-		this.kcalRecomendado = kcalRecomendado;
-		this.estadoSuscripcion = estadoSuscripcion;
-		this.creditos = creditos;
-		this.email = email;
-		this.password = password;
 	}
 
 	public int getIdUsuario() {
