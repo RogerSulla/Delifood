@@ -7,7 +7,9 @@ import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import pe.edu.upc.entity.Rol;
 import pe.edu.upc.entity.Usuario;
+import pe.edu.upc.service.IRolService;
 import pe.edu.upc.service.IUsuarioService;
 
 @Named
@@ -18,11 +20,15 @@ public class RegistroController implements Serializable {
     @Inject
     private IUsuarioService uS;
 
+    @Inject
+    IRolService rS;
+
     private Usuario usuario;
 
     @PostConstruct
     public void init() {
         this.usuario = new Usuario();
+        rS.initRol();
     }
 
     public String nuevoUsuario() {
@@ -36,6 +42,7 @@ public class RegistroController implements Serializable {
         try {
             String password = this.usuario.getPassword();
             this.usuario.setPassword(password);
+            this.usuario.setRol(new Rol(2));
             this.uS.insertar(usuario);
             limpiarUsuario();
 

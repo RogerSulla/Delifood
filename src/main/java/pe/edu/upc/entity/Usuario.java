@@ -33,11 +33,11 @@ public class Usuario implements Serializable {
 	@JoinColumn(name = "idObjetivoNutricional")
 	private ObjetivoNutricional objetivoNutricional;
 
-	@Column(name = "nombres", nullable = false, length = 25)
+	@Column(name = "nombres", nullable = true, length = 25)
 	private String nombres;
-	@Column(name = "apellidos", nullable = false, length = 25)
+	@Column(name = "apellidos", nullable = true, length = 25)
 	private String apellidos;
-	@Column(name = "telefono", nullable = false, length = 15)
+	@Column(name = "telefono", nullable = true, length = 15)
 	private String telefono;
 
 	@Column(name = "peso")

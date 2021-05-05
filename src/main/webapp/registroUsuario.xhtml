@@ -14,7 +14,7 @@
     <h:form id="frm">
         <p:growl id="men" />
         <center>
-            <h:graphicImage value="/resources/img/logo.png" height="15%" width="15%"></h:graphicImage>
+            <h:graphicImage value="/resources/img/delilogo.png"></h:graphicImage>
             <br />
         </center>
         <div align="center">
@@ -58,7 +58,7 @@
 
             </h:panelGrid>
 
-            <p:commandButton value="Inicio" action="index?faces-redirect=true" immediate="true"
+            <p:commandButton value="Inicio" action="login?faces-redirect=true" immediate="true"
                 styleClass="btn btn-primary" />
             <p:commandButton value="Registrar" action="#{registroController.registrarUsuario()}"
                 styleClass="btn btn-primary" />

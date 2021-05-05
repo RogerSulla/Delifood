@@ -13,15 +13,17 @@
 <body>
 
     <h:form id="frm">
+        <ui:define name="titleCont">
+            <span>Cliente</span>
+        </ui:define>
+
         <div align="center">
             <p:growl id="men" />
             <center style="margin-top: 70px">
-                <h:graphicImage value="/resources/img/delilogo.png" height="20%" width="20%"></h:graphicImage>
+                <h:graphicImage value="/resources/img/delilogo.png"></h:graphicImage>
                 <br />
             </center>
 
-            <p:commandButton value="Nuevo" action="#{registroController.nuevoUsuario()}" styleClass="btn btn-primary"
-                ajax="false" />
         </div>
     </h:form>
 
