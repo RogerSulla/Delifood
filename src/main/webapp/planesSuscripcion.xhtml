@@ -1,0 +1,102 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:p="http://primefaces.org/ui" xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    </link>
+    <link rel="shortcut icon" type="image/x-icon" href="resources/img/favicon.ico" />
+</h:head>
+
+<body>
+    <h:form id="frm">
+        <div align="center">
+            <p:growl id="men" />
+            <center>
+                <h:graphicImage value="/resources/img/delilogo.png"></h:graphicImage>
+                <br />
+                <h2>Planes de suscripción</h2>
+
+                <f:facet name="subtitle">
+                    <h5>Disfruta de los distintos planes de suscripción que tenemos para ti y sacar provecho a los
+                        beneficios que te ofrecemos</h5>
+                </f:facet>
+
+            </center>
+            <h:panelGrid columns="3" align="center">
+                <f:facet name="subtitle">
+                    <h5>Disfruta de los distintos planes de suscripción que tenemos para ti y sacar provecho a los
+                        beneficios que te ofrecemos</h5>
+                </f:facet>
+            </h:panelGrid>
+
+            <h:panelGrid columns="3" align="center">
+                <p:card style="width: 25em" align="center">
+                    <f:facet name="header">
+                        <f:facet name="title">
+                            <h2>Semanal</h2>
+                            <h1>S/.80.00</h1>
+                        </f:facet>
+                    </f:facet>
+                    <f:facet name="subtitle">
+                        <h4>7 comidas</h4>
+                        <h4>Envío Gratis</h4>
+                        <h4>1 Asesoría nutricional</h4>
+                    </f:facet>
+
+                    <f:facet name="footer">
+                        <p:selectOneButton>
+                            <f:selectItem itemLabel="Elegir" itemValue="1" style="margin-left: .5em" />
+                        </p:selectOneButton>
+                    </f:facet>
+                </p:card>
+
+                <p:card style="width: 25em" align="center">
+                    <f:facet name="header">
+                        <f:facet name="title">
+                            <h2>Mensual</h2>
+                            <h1>S/.160.00</h1>
+                        </f:facet>
+                    </f:facet>
+                    <f:facet name="subtitle">
+                        <h4>30 comidas</h4>
+                        <h4>Envío Gratis</h4>
+                        <h4>Asesorías nutricionales</h4>
+                    </f:facet>
+
+                    <f:facet name="footer">
+                        <p:selectOneButton>
+                            <f:selectItem itemLabel="Elegir" itemValue="1" style="margin-left: .5em" />
+                        </p:selectOneButton>
+                    </f:facet>
+                </p:card>
+
+                <p:card style="width: 25em" align="center">
+                    <f:facet name="header">
+                        <f:facet name="title">
+                            <h2>Trimestral</h2>
+                            <h1>S/.390.00</h1>
+                        </f:facet>
+                    </f:facet>
+                    <f:facet name="subtitle">
+                        <h4>90 comidas</h4>
+                        <h4>Envío Gratis</h4>
+                        <h4>Asesorías nutricionales</h4>
+                    </f:facet>
+
+                    <f:facet name="footer">
+                        <p:selectOneButton>
+                            <f:selectItem itemLabel="Elegir" itemValue="1" style="margin-left: .5em" />
+                        </p:selectOneButton>
+                    </f:facet>
+                </p:card>
+            </h:panelGrid>
+
+        </div>
+    </h:form>
+
+
+</body>
+
+</html>

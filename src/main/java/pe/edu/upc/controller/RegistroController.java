@@ -59,7 +59,7 @@ public class RegistroController implements Serializable {
         String redirect = null;
         try {
             this.uS.actualizar(usuario);
-            redirect = "/panelUsuario?faces-redirect=true";
+            redirect = "/planesSuscripcion?faces-redirect=true";
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

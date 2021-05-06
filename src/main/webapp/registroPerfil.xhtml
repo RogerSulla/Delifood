@@ -11,15 +11,69 @@
 
 <body>
     <h:form id="frm">
-        <p:growl id="men" />
-        <center>
-            <h:graphicImage value="/resources/img/delilogo.png"></h:graphicImage>
-            <br />
-            <h1>Cuentanos acerca de ti</h1>
-        </center>
         <div align="center">
+            <p:growl id="men" />
+            <center>
+                <h:graphicImage value="/resources/img/delilogo.png"></h:graphicImage>
+                <br />
+                <h2>Cuentanos acerca de ti</h2>
+            </center>
+            <h:panelGrid columns="3">
+                <p:card style="width: 25em">
+                    <f:facet name="header">
+                        <h:graphicImage value="/resources/img/ON1.jpg"></h:graphicImage>
+                    </f:facet>
+                    <f:facet name="title">
+                        Bajar de Peso
+                    </f:facet>
+                    <f:facet name="subtitle">
+                        Deseo mejorar mi figura y quiero perder peso siguiendo una dieta saludable
+                    </f:facet>
 
-            <f:facet name="header">Cuentanos acerca de ti</f:facet>
+                    <f:facet name="footer">
+                        <p:selectOneButton>
+                            <f:selectItem itemLabel="Seleccionar" itemValue="1" style="margin-left: .5em" />
+                        </p:selectOneButton>
+                    </f:facet>
+                </p:card>
+
+                <p:card style="width: 25em">
+                    <f:facet name="header">
+                        <h:graphicImage value="/resources/img/ON2.jpg"></h:graphicImage>
+                    </f:facet>
+                    <f:facet name="title">
+                        Aumentar masa muscular
+                    </f:facet>
+                    <f:facet name="subtitle">
+                        Quiero seguir un régimen que me pueda ayudare a ganar masa muscular
+                    </f:facet>
+
+                    <f:facet name="footer">
+                        <p:selectOneButton>
+                            <f:selectItem itemLabel="Seleccionar" itemValue="2" style="margin-left: .5em" />
+                        </p:selectOneButton>
+                    </f:facet>
+                </p:card>
+
+                <p:card style="width: 25em">
+                    <f:facet name="header">
+                        <h:graphicImage value="/resources/img/ON3.jpg"></h:graphicImage>
+                    </f:facet>
+                    <f:facet name="title">
+                        Mejorar mi salud
+                    </f:facet>
+                    <f:facet name="subtitle">
+                        Quiero seguir un régimen alimenticio que me permita mejorar mi salud
+                    </f:facet>
+
+                    <f:facet name="footer">
+                        <p:selectOneButton>
+                            <f:selectItem itemLabel="Seleccionar" itemValue="3" style="margin-left: .5em" />
+                        </p:selectOneButton>
+                    </f:facet>
+                </p:card>
+            </h:panelGrid>
+
             <h:panelGrid id="pg" columns="2">
 
                 <p:outputLabel for="txtHeight" value="Mido(cm)" />
@@ -38,17 +92,19 @@
 
 
             <div>
-                <h5 class="p-mt-0">Género</h5>
-                <p:selectOneRadio id="gen" value="" unselectable="true">
+                <h6 class="p-mt-0">Género</h6>
+                <p:selectOneRadio id="gen" unselectable="true">
                     <f:selectItem itemLabel="Masculino" itemValue="1" />
                     <f:selectItem itemLabel="Femenino" itemValue="2" />
                 </p:selectOneRadio>
             </div>
 
-            <p:commandButton value="Continuar" action="#{registroController.registroPerfil()}"
+            <p:commandButton value="Continuar" action="#{registroController.registroPerfil()}" style="margin-left: .5em"
                 styleClass="btn btn-primary" />
+
         </div>
     </h:form>
+
 
 </body>
 

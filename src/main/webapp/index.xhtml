@@ -1,37 +1,101 @@
-<!DOCTYPE html
-    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
-    xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html" xmlns:p="http://primefaces.org/ui">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:p="http://primefaces.org/ui">
 
 <h:head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    </link>
-    <link rel="shortcut icon" type="image/x-icon" href="resources/img/favicon.ico" />
 
 </h:head>
 
 <body>
+    <style type="text/css">
+        p {
+            line-height: 1.5;
+            margin: 0;
+        }
+    </style>
 
-    <h:form id="frm">
+    <h:panelGrid columns="3">
+        <p:card style="width: 25em">
+            <f:facet name="header">
+                <h:graphicImage value="/resources/img/ON1.jpg"></h:graphicImage>
+            </f:facet>
+            <f:facet name="title">
+                Bajar de Peso
+            </f:facet>
+            <f:facet name="subtitle">
+                Deseo mejorar mi figura y quiero perder peso siguiendo una dieta saludable
+            </f:facet>
 
-        <style type="text/css">
-            .grid-radio td {
-                padding: .5rem;
-            }
-        </style>
+            <f:facet name="footer">
+                <p:selectOneButton value="#{selectOneButtonView.option}">
+                    <f:selectItem itemLabel="Seleccionar" itemValue="Option1" style="margin-left: .5em" />
+                </p:selectOneButton>
+            </f:facet>
+        </p:card>
 
-        <div class="card">
-            <h:form>
-                <h5 class="p-mt-0">Basic</h5>
-                <p:selectOneRadio id="console" value="" unselectable="true">
-                    <f:selectItem itemLabel="Masculino" itemValue="Option1" />
-                    <f:selectItem itemLabel="Femenino" itemValue="Option2" />
-                </p:selectOneRadio>
+        <p:card style="width: 25em">
+            <f:facet name="header">
+                <h:graphicImage value="/resources/img/ON2.jpg"></h:graphicImage>
+            </f:facet>
+            <f:facet name="title">
+                Aumentar masa muscular
+            </f:facet>
+            <f:facet name="subtitle">
+                Quiero seguir un régimen que me pueda ayudare a ganar masa muscular
+            </f:facet>
 
-            </h:form>
-        </div>
-    </h:form>
+            <f:facet name="footer">
+                <p:selectOneButton value="#{selectOneButtonView.option}">
+                    <f:selectItem itemLabel="Seleccionar" itemValue="Option2" style="margin-left: .5em" />
+                </p:selectOneButton>
+            </f:facet>
+        </p:card>
 
+        <p:card style="width: 25em">
+            <f:facet name="header">
+                <h:graphicImage value="/resources/img/ON3.jpg"></h:graphicImage>
+            </f:facet>
+            <f:facet name="title">
+                Mejorar mi salud
+            </f:facet>
+            <f:facet name="subtitle">
+                Quiero seguir un régimen alimenticio que me permita mejorar mi salud
+            </f:facet>
+
+            <f:facet name="footer">
+                <p:selectOneButton value="#{selectOneButtonView.option}">
+                    <f:selectItem itemLabel="Seleccionar" itemValue="Option3" style="margin-left: .5em" />
+                </p:selectOneButton>
+            </f:facet>
+        </p:card>
+    </h:panelGrid>
+
+    <h:panelGrid id="pg" columns="2">
+
+        <p:outputLabel for="txtHeight" value="Mido(cm)" />
+        <p:inputText id="txtHeight" value="#{registroController.usuario.estatura}" required="true"
+            styleClass="form-control" />
+        <p:outputLabel for="txtWeight" value="Peso(kg)" />
+        <p:inputText id="txtWeight" value="#{registroController.usuario.peso}" required="true"
+            styleClass="form-control" />
+        <p:outputLabel for="txtBirthDate" value="Fecha de nacimiento" />
+        <p:datePicker id="txtBirthDate" value="#{registroController.usuario.fechaNacimiento}" required="true"
+            styleClass="form-control" />
+        <h:column />
+
+
+    </h:panelGrid>
+
+
+    <div>
+        <h5 class="p-mt-0">Género</h5>
+        <p:selectOneRadio id="gen" value="" unselectable="true">
+            <f:selectItem itemLabel="Masculino" itemValue="1" />
+            <f:selectItem itemLabel="Femenino" itemValue="2" />
+        </p:selectOneRadio>
+    </div>
+
+    <p:commandButton value="Continuar" action="#{registroController.registroPerfil()}" style="margin-left: .5em"
+        styleClass="btn btn-primary" />
 </body>
 
 </html>

@@ -40,7 +40,7 @@ public class LoginController implements Serializable {
                 if (rolID == 1) {
                     redirect = "/panelAdministrador?faces-redirect=true";
                 } else {
-                    redirect = "/panelUsuario?faces-redirect=true";
+                    redirect = "/planesSuscripcion?faces-redirect=true";
                 }
             } else {
                 FacesContext.getCurrentInstance().addMessage(null,

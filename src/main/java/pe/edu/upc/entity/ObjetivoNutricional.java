@@ -16,20 +16,19 @@ public class ObjetivoNutricional implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idObjetivoNutricional;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int idObjetivoNutricional;
 
-    @Column(name = "objetivoNutricional", nullable = false, length = 11)
-    private String objetivoNutricional;
+	@Column(name = "objetivoNutricional", nullable = false, length = 11)
+	private String objetivoNutricional;
 
 	public ObjetivoNutricional() {
 		super();
 	}
 
-	public ObjetivoNutricional(int idObjetivoNutricional, String objetivoNutricional) {
+	public ObjetivoNutricional(int idObjetivoNutricional) {
 		super();
 		this.idObjetivoNutricional = idObjetivoNutricional;
-		this.objetivoNutricional = objetivoNutricional;
 	}
 
 	public int getIdObjetivoNutricional() {
@@ -47,8 +46,5 @@ public class ObjetivoNutricional implements Serializable {
 	public void setObjetivoNutricional(String objetivoNutricional) {
 		this.objetivoNutricional = objetivoNutricional;
 	}
-    
-    
-    
 
 }
