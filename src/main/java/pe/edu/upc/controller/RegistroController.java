@@ -44,8 +44,22 @@ public class RegistroController implements Serializable {
             this.usuario.setPassword(password);
             this.usuario.setRol(new Rol(2));
             this.uS.insertar(usuario);
-            limpiarUsuario();
 
+            redirect = "/registroPerfil?faces-redirect=true";
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            limpiarUsuario();
+        }
+
+        return redirect;
+    }
+
+    public String registroPerfil() {
+        String redirect = null;
+        try {
+            this.uS.actualizar(usuario);
+            redirect = "/panelUsuario?faces-redirect=true";
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

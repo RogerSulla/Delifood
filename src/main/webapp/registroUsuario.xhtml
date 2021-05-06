@@ -16,44 +16,35 @@
         <center>
             <h:graphicImage value="/resources/img/delilogo.png"></h:graphicImage>
             <br />
+            <h1>Regístrate</h1>
+            <h3>Registra tus datos</h3>
         </center>
         <div align="center">
 
             <f:facet name="header">Registrar Usuario</f:facet>
-            <h:panelGrid id="pg" columns="2">
-                <p:outputLabel for="txtName" value="Nombres" />
-                <p:inputText id="txtName" value="#{registroController.usuario.nombres}" required="true"
-                    styleClass="form-control" />
-                <h:column />
 
-                <p:outputLabel for="txtSurname" value="Apellidos" />
-                <p:inputText id="txtSurname" value="#{registroController.usuario.apellidos}" required="true"
-                    styleClass="form-control" />
-                <h:column />
+            <h:panelGrid id="pg" columns="1">
 
-                <p:outputLabel for="txtPhone" value="Telefono" />
-                <p:inputText id="txtPhone" value="#{registroController.usuario.telefono}" required="true"
-                    styleClass="form-control" />
-                <h:column />
-
-
-                <p:outputLabel for="txtEmail" value="Correo" />
-                <p:inputText id="txtEmail" value="#{registroController.usuario.email}" required="true"
-                    styleClass="form-control" />
-                <p:message for="txtEmail" display="text" />
-                <h:column />
-
-                <p:outputLabel for="txtPassword1" value="Contraseña :" />
-                <p:password id="txtPassword1" value="#{registroController.usuario.password}" match="txtPassword2"
-                    label="Password 1" required="true" validatorMessage="Contraseñas no coinciden"
-                    styleClass="form-control" />
-                <p:message for="txtPassword1" display="text" />
-                <h:column />
-
-                <p:outputLabel for="txtPassword2" value="Escriba nuevamente su contraseña:" />
-                <p:password id="txtPassword2" value="#{registroController.usuario.password}" label="Password 2"
+                <p:inputText id="txtName" placeholder="Nombres" value="#{registroController.usuario.nombres}"
                     required="true" styleClass="form-control" />
-                <h:column />
+
+
+                <p:inputText id="txtSurname" placeholder="Apellidos" value="#{registroController.usuario.apellidos}"
+                    required="true" styleClass="form-control" />
+
+                <p:inputText id="txtPhone" placeholder="Telefono" value="#{registroController.usuario.telefono}"
+                    required="true" styleClass="form-control" />
+
+                <p:inputText id="txtEmail" placeholder="Correo" value="#{registroController.usuario.email}"
+                    required="true" styleClass="form-control" />
+
+                <p:password id="txtPassword1" placeholder="Contraseña" value="#{registroController.usuario.password}"
+                    match="txtPassword2" label="Password 1" required="true" validatorMessage="Contraseñas no coinciden"
+                    styleClass="form-control" />
+
+                <p:password id="txtPassword2" placeholder="Confirmar contraseña"
+                    value="#{registroController.usuario.password}" label="Password 2" required="true"
+                    styleClass="form-control" />
                 <h:column />
 
             </h:panelGrid>

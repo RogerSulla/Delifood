@@ -1,0 +1,55 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:p="http://primefaces.org/ui" xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    </link>
+    <link rel="shortcut icon" type="image/x-icon" href="resources/img/favicon.ico" />
+</h:head>
+
+<body>
+    <h:form id="frm">
+        <p:growl id="men" />
+        <center>
+            <h:graphicImage value="/resources/img/delilogo.png"></h:graphicImage>
+            <br />
+            <h1>Cuentanos acerca de ti</h1>
+        </center>
+        <div align="center">
+
+            <f:facet name="header">Cuentanos acerca de ti</f:facet>
+            <h:panelGrid id="pg" columns="2">
+
+                <p:outputLabel for="txtHeight" value="Mido(cm)" />
+                <p:inputText id="txtHeight" value="#{registroController.usuario.estatura}" required="true"
+                    styleClass="form-control" />
+                <p:outputLabel for="txtWeight" value="Peso(kg)" />
+                <p:inputText id="txtWeight" value="#{registroController.usuario.peso}" required="true"
+                    styleClass="form-control" />
+                <p:outputLabel for="txtBirthDate" value="Fecha de nacimiento" />
+                <p:datePicker id="txtBirthDate" value="#{registroController.usuario.fechaNacimiento}" required="true"
+                    styleClass="form-control" />
+                <h:column />
+
+
+            </h:panelGrid>
+
+
+            <div>
+                <h5 class="p-mt-0">Género</h5>
+                <p:selectOneRadio id="gen" value="" unselectable="true">
+                    <f:selectItem itemLabel="Masculino" itemValue="1" />
+                    <f:selectItem itemLabel="Femenino" itemValue="2" />
+                </p:selectOneRadio>
+            </div>
+
+            <p:commandButton value="Continuar" action="#{registroController.registroPerfil()}"
+                styleClass="btn btn-primary" />
+        </div>
+    </h:form>
+
+</body>
+
+</html>
